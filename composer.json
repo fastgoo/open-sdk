@@ -1,0 +1,27 @@
+{
+  "name": "fastgoo/fastgoo-open-sdk",
+  "type": "library",
+  "description": "快捷开放平台SDK扩展包",
+  "keywords": [
+    "fastgoo",
+    "open-sdk"
+  ],
+  "homepage": "https://phalcon.fastgoo.net",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mr.Zhou",
+      "email": "773729704@qq.com",
+      "homepage": "https://github.com/fastgoo"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "martinusso/opencrypt": "^3.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "FastGoo\\": "src/"
+    }
+  }
+}
