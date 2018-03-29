@@ -20,7 +20,7 @@ switch ($type) {
         exit;
         break;
     case 'redirect':
-        $wechatAuth->redirect('/example.php?demo_type=decode');
+        $wechatAuth->redirect('/AuthExample.php?demo_type=decode');
         break;
 }
 
