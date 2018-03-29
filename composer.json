@@ -17,7 +17,8 @@
   ],
   "require": {
     "php": ">=7.0",
-    "martinusso/opencrypt": "^3.1"
+    "martinusso/opencrypt": "^3.1",
+    "firebase/php-jwt": "*"
   },
   "autoload": {
     "psr-4": {

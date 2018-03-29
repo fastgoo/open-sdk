@@ -10,7 +10,7 @@ namespace FastGoo;
 
 class WechatAuth
 {
-    use OpenCrypt;
+    use OpenCrypt, Jwt;
 
     private $app_id;
     private $app_secret;
@@ -23,6 +23,8 @@ class WechatAuth
         }
         $this->app_id = $config['app_id'];
         $this->app_secret = $config['app_secret'];
+        $this->setJwtSecret($this->app_secret);
+        $this->setCryptSecret($this->app_secret);
     }
 
     /**
@@ -39,6 +41,16 @@ class WechatAuth
     }
 
     /**
+     * 解析用户token数据
+     * @param string $jwtStr
+     * @return bool|object
+     */
+    public function jwtDecode(string $jwtStr)
+    {
+        return $this->decode($jwtStr);
+    }
+
+    /**
      * 数据解密
      * @param string $encryptData
      * @param string $iv
@@ -50,7 +62,6 @@ class WechatAuth
             return false;
         }
         $this->setIv($iv);
-        $this->setSecret($this->app_secret);
         return $this->decrypt($encryptData);
     }
 

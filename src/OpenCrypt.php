@@ -19,7 +19,7 @@ trait OpenCrypt
      * 设置解密secret
      * @param string $secret
      */
-    private function setSecret(string $secret)
+    private function setCryptSecret(string $secret)
     {
         $this->secret = $secret;
     }
