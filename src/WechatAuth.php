@@ -14,7 +14,7 @@ class WechatAuth
 
     private $app_id;
     private $app_secret;
-    private $web_auth_url = "https://open.fasgoo.net/wechat/web_auth/redirect";
+    private $web_auth_url = "https://open.fastgoo.net/wechat/web_auth/redirect";
 
     public function __construct(Array $config = [])
     {
