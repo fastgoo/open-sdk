@@ -30,7 +30,7 @@ trait OpenCrypt
      */
     private function setIv(string $iv)
     {
-        $this->iv = base64_decode($iv);
+        $this->iv = base64_decode(urldecode($iv));
     }
 
     /**
@@ -41,7 +41,7 @@ trait OpenCrypt
     private function decrypt(string $encryptData)
     {
         $openCrypt = new OpenSSLCrypt($this->secret, $this->iv);
-        $decryptData = $openCrypt->decrypt($encryptData);
+        $decryptData = $openCrypt->decrypt(urldecode($encryptData));
         $decryptData && json_decode($decryptData, true);
         return $decryptData;
     }
