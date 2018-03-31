@@ -9,7 +9,7 @@ include './vendor/autoload.php';
 
 use FastGoo\WechatAuth;
 
-$config = ['app_id' => '5a5bffe6dedb3', 'app_secret' => '86b1c50e6c5e068ae7d7b465d6758b8c'];
+$config = ['app_id' => '5abed4bfb179e', 'app_secret' => 'ef04a39f8f55c2c998491f0236f3f1cf'];
 $token = !empty($_GET['token']) ? $_GET['token'] : '';
 $auth = new WechatAuth($config);
 if ($data = $auth->jwtDecode($token)) {
